@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(121, 121, 190);
+    display: flex;
+    justify-content: center; /* we can use for to take text and her div in center using flex justify and align item*/
+    align-items: center;
+    height: 100vh;
+}
+#formcontainer{
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 50px;
+}
+h2{
+    margin: opx opx 10px 0px;
+}
+input{
+     width: 200px;
+     margin: 10px 0px;
+     padding: 10px;
+}
+input[type="submit"]{
+    width: 222px;
+    background-color: rgb(121, 121, 190);
+    border: 0px;
+    color: white;
+}
+.Error{
+     color: red;
+     margin: 0px;
+     text-align: left;
+}

@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>Form Validation in Js</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <div id="formcontainer">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validateform()">
+            <input type="text" placeholder="User Name" id="username"><br>
+            <p id="userError" class="Error"></p>
+            <input type="password" placeholder="Password" id="password"><br>
+            <p id="passError" class="Error"></p>
+
+            <input type="submit">
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
