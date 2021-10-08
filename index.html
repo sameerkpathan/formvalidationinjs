@@ -1,25 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Form Validation in Js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javasccript Form Validation</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <div id="formcontainer">
-        <h2>Login</h2>
-        <form action="" onsubmit="return validateform()">
-            <input type="text" placeholder="User Name" id="username"><br>
-            <p id="userError" class="Error"></p>
-            <input type="password" placeholder="Password" id="password"><br>
-            <p id="passError" class="Error"></p>
+    <div id="mainbody">
+        <div id="mainformbody">
+            
+            <h1 id="header">Welcome</h1>
+            <div id="formbody">
 
-            <input type="submit">
-        </form>
+                <form action="/myaction.php" name="myForm" onsubmit="return validateForm()" method="POST">
+                    <div id="name" class="formdesign">
+                        Name : <input type="text" name="fname" placeholder="Enter Your Name" required >
+                        <div>
+
+                            <span class="formerror">
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="email" class="formdesign">
+                        Email : <input type="email" name="femail" placeholder="Enter Your Email id" required>
+                        <div>
+
+                            <span class="formerror">
+                            </span>
+                        </div>
+
+                        <div id="phone" class="formdesign">
+                            Phone : <input type="number" name="fphone" placeholder="Enter Your Phone Number" required>
+                            <div>
+
+                                <span class="formerror">
+                                </span>
+                            </div>
+
+                            <div id="address" class="formdesign">
+                                Address : <input type="text" name="faddress" placeholder="Enter Your Address">
+                                <div>
+
+                                    <span class="formerror">
+                                    </span>
+                                </div>
+
+                                <div id="pass" class="formdesign">
+                                    Password : <input type="password" name="fpass" placeholder="Enter Your Passward"
+                                        required>
+                                    <div>
+
+                                        <span class="formerror">
+                                        </span>
+                                    </div>
+
+                                    <div id="cpass" class="formdesign">
+                                        Confirm Password : <input type="password" name="fcpass"
+                                            placeholder="Enter Your Confirm password" required>
+                                        <div>
+
+                                            <span class="formerror">
+                                            </span>
+                                        </div>
+
+
+                                        <div id="inputtag">
+
+                                            <input class="but" type="submit" value="submit">
+                                        </div>
+
+                </form>
+            </div>
+
+        </div>
     </div>
+    <script>
 
-    <script src="./script.js"></script>
+
+        function cleaerError() {
+            errors = document.getElementsByClassName('formerror');
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+        }
+
+        function seterror(id, error) {
+            //set error inside tag of id
+
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+        };
+
+        function validateForm() {
+            var returnval = true;
+            cleaerError();
+
+            //perform validation and if validation fails , set the value of return to false
+
+            //for name 
+
+            var name = document.forms['myForm']["fname"].value;
+            if (name.length < 5) {
+                seterror(`name`, `*Length of name is too short`);
+                returnval = false;
+            }
+
+            if (name.length == 0) {
+                seterror(`name`, `*Length of name can not be Zero`);
+                returnval = false;
+            }
+
+            //for email
+
+            var email = document.forms['myForm']['femail'].value;
+            if (email.length > 35) {
+                seterror(`email`, `*Email length is too long`);
+                returnval = false;
+            }
+
+            //phone
+
+            var phone = document.forms['myForm']['fphone'].value;
+            if (phone.length != 10) {
+                seterror(`phone`, `*Phone Number should be 10 digit`);
+                returnval = false;
+            }
+
+            //password
+
+            var passw = document.forms['myForm']['fpass'].value;
+            if (passw.length < 7) {
+                seterror(`pass`, `*Length of Passward should be 8 char `);
+                returnval = false;
+            }
+
+            //  confirmpassword
+
+            var cpassw = document.forms['myForm']['fcpass'].value;
+            if (cpassw != passw) {
+                seterror(`cpass`, `*Passward not matched `);
+                returnval = false;
+            }
+
+
+
+
+
+            return returnval;
+        }
+    </script>
 </body>
+
 </html>

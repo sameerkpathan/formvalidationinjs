@@ -1,31 +1,56 @@
+
 body{
-    background-color: rgb(121, 121, 190);
+    padding: 10px 50px;
+    background-color: #33d9b2;
+}
+#mainbody{
     display: flex;
-    justify-content: center; /* we can use for to take text and her div in center using flex justify and align item*/
-    align-items: center;
-    height: 100vh;
+    width: 100%;
+    height: 50vh;
+    justify-content: center;
+    align-content: center;
+
 }
-#formcontainer{
-    text-align: center;
-    background-color: whitesmoke;
-    padding: 50px;
+
+#formbody {
+    background-color: #867878e0;
+  
 }
-h2{
-    margin: opx opx 10px 0px;
+#header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
 }
-input{
-     width: 200px;
-     margin: 10px 0px;
-     padding: 10px;
+
+
+#inputtag{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
-input[type="submit"]{
-    width: 222px;
-    background-color: rgb(121, 121, 190);
-    border: 0px;
-    color: white;
+
+.formdesign{
+    font-size: 20px;
 }
-.Error{
-     color: red;
-     margin: 0px;
-     text-align: left;
+.formdesign input{
+    width: 50%;
+    padding: 12px 20px;
+    border: 1PX solid blue;
+    margin: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
+.formerror{
+    font-weight: bold;
+    color: red;
+}
+
+.but{
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 25px;
+    margin: 22px 10 px;
 }
